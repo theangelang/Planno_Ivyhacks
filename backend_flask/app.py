@@ -25,7 +25,7 @@ def index():
         try:
             db.session.add(new_task)
             db.session.commit()
-            return redirect('/')
+            return redirect('/todo')
         except:
             return 'OOPS!! THERE IS AN UNEXPECTED ERROR'  
 
@@ -40,7 +40,7 @@ def delete(id):
     try:
         db.session.delete(task_to_delete)
         db.session.commit()
-        return redirect('/')
+        return redirect('/todo')
     except:    
         return 'OOPS!! THERE IS AN UNEXPECTED ERROR'    
 
@@ -53,7 +53,7 @@ def update(id):
 
         try:
             db.session.commit()
-            return redirect('/')
+            return redirect('/todo')
         except:
             return 'OOPS!! THERE IS AN UNEXPECTED ERROR'
 
