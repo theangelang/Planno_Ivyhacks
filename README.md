@@ -1,4 +1,4 @@
 # Planno
 
 
-This is out Ivhacks project named Planno ! A plenner and task manager
+This is our Ivyhacks project named Planno ! A plenner and task manager
