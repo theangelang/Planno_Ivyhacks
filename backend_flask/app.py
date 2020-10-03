@@ -16,7 +16,7 @@ class ToDo(db.Model):
         return '<Task %r>' % self.id
   
 
-@app.route('/todo', methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
         task_content = request.form['content']
@@ -25,7 +25,7 @@ def index():
         try:
             db.session.add(new_task)
             db.session.commit()
-            return redirect('/todo')
+            return redirect('/')
         except:
             return 'OOPS!! THERE IS AN UNEXPECTED ERROR'  
 
@@ -40,7 +40,7 @@ def delete(id):
     try:
         db.session.delete(task_to_delete)
         db.session.commit()
-        return redirect('/todo')
+        return redirect('/')
     except:    
         return 'OOPS!! THERE IS AN UNEXPECTED ERROR'    
 
@@ -53,7 +53,7 @@ def update(id):
 
         try:
             db.session.commit()
-            return redirect('/todo')
+            return redirect('/')
         except:
             return 'OOPS!! THERE IS AN UNEXPECTED ERROR'
 
