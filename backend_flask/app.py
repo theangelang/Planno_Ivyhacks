@@ -61,4 +61,5 @@ def update(id):
         return render_template('update.html', task=task)        
 
 if __name__ == "__main__" :
+    db.create_all()
     app.run(debug=True) 
